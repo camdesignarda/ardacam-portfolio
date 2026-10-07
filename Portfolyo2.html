@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arda ÇAM | Görsel İletişim Tasarımcısı (VCD)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #0A1B20; color: #f1f5f9; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    #heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+    .brand-amber { color: #E29E3A; }
+    .bg-brand-petrol { background-color: #143840; }
+  </style>
+</head>
+<body class="selection:bg-[#E29E3A] selection:text-[#0A1B20]">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-[#0A1B20]/80 backdrop-blur-md border-b border-[#143840]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#143840] border border-[#E29E3A]/40 flex items-center justify-center p-1.5 shadow-lg">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <path d="M 30,170 A 70,70 0 0,1 170,170" fill="none" stroke="#E29E3A" stroke-width="26" stroke-linecap="round"/>
+            <path d="M 120,60 A 42,42 0 1,1 60,115" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="50" cy="148" r="10" fill="#E29E3A"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-bold tracking-tight text-lg text-white">Arda <span class="text-[#E29E3A]">ÇAM</span></span>
+          <p class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold">Görsel İletişim Tasarımcısı</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#projeler" class="hover:text-[#E29E3A] transition">Projeler</a>
+        <a href="#araclar" class="hover:text-[#E29E3A] transition">Yetkinlikler</a>
+        <a href="#iletisim" class="hover:text-[#E29E3A] transition">İletişim</a>
+      </div>
+      <a id="navLinkedin" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-[#0077b5] text-white text-xs font-bold flex items-center gap-2 hover:opacity-90 transition">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden">
+    <canvas id="heroCanvas"></canvas>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div id="heroBadge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#143840]/80 border border-[#E29E3A]/40 text-xs font-medium text-slate-200 mb-6 backdrop-blur-md"></div>
+      <h1 id="heroTitle" class="text-4xl sm:text-6xl font-extrabold text-white leading-tight"></h1>
+      <p id="heroDesc" class="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"></p>
+      <div class="mt-10 flex justify-center gap-4">
+        <a href="#projeler" class="px-7 py-3.5 rounded-xl bg-[#E29E3A] text-[#0A1B20] font-bold hover:bg-[#caa033] transition shadow-lg">Projeleri İncele</a>
+        <a id="heroEmail" href="#" class="px-7 py-3.5 rounded-xl bg-[#143840] hover:bg-[#1a4752] text-white font-medium border border-slate-700 transition">E-Posta Gönder</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJELER -->
+  <section id="projeler" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="mb-12">
+      <p class="text-xs uppercase tracking-widest text-[#E29E3A] font-bold">Portföy</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Seçilmiş Çalışmalar</h2>
+    </div>
+    <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </section>
+
+  <!-- ARAÇLAR -->
+  <section id="araclar" class="py-24 bg-[#102A31]/40 border-y border-[#143840]">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-xs uppercase tracking-widest text-[#E29E3A] font-bold">Yazılımlar</p>
+      <h2 class="text-3xl font-bold text-white mt-1 mb-12">Teknik Yetkinlikler</h2>
+      <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="iletisim" class="py-24 max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white">İletişime Geçin</h2>
+    <p class="mt-3 text-slate-400 text-sm">Projeleriniz veya tam zamanlı fırsatlar için bana ulaşın.</p>
+    <div class="mt-8 flex justify-center gap-4">
+      <a id="footerLinkedin" href="#" target="_blank" class="px-6 py-3.5 rounded-xl bg-[#0077b5] text-white font-bold flex items-center gap-2">
+        <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
+      </a>
+      <a id="footerEmail" href="#" class="px-6 py-3.5 rounded-xl bg-[#143840] text-white font-bold border border-slate-700 flex items-center gap-2">
+        <i class="fa-solid fa-envelope text-[#E29E3A]"></i> <span id="footerEmailText"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CASE STUDY MODAL -->
+  <div id="projectModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; padding:16px;">
+    <div style="background:#0A1B20; border:1px solid #143840; border-radius:20px; max-width:700px; width:100%; overflow:hidden; position:relative;">
+      <button onclick="closeModal()" style="position:absolute; top:16px; right:16px; z-index:10; background:#143840; color:#fff; border:none; width:36px; height:36px; border-radius:50%; cursor:pointer;">&times;</button>
+      <img id="mImg" src="" style="width:100%; height:260px; object-fit:cover;" />
+      <div style="padding:24px;">
+        <span id="mCat" style="color:#E29E3A; font-size:12px; font-weight:bold; text-transform:uppercase;"></span>
+        <h3 id="mTitle" style="color:#fff; font-size:24px; font-weight:bold; margin:6px 0 12px 0;"></h3>
+        <p id="mDesc" style="color:#cbd5e1; font-size:14px; line-height:1.6; margin-bottom:16px;"></p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+          <div style="background:#102A31; padding:12px; border-radius:10px;">
+            <div style="color:#f87171; font-size:11px; font-weight:bold; text-transform:uppercase;">Zorluk</div>
+            <p id="mProb" style="color:#cbd5e1; font-size:12px; margin-top:4px;"></p>
+          </div>
+          <div style="background:#102A31; padding:12px; border-radius:10px;">
+            <div style="color:#34d399; font-size:11px; font-weight:bold; text-transform:uppercase;">Çözüm</div>
+            <p id="mSol" style="color:#cbd5e1; font-size:12px; margin-top:4px;"></p>
+          </div>
+        </div>
+        <div style="font-size:12px; color:#94a3b8;">Kullanılan Araçlar: <span id="mTools" style="color:#E29E3A;"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="content.js"></script>
+  <script>
+    // 1. Verileri Sayfaya Doldurma
+    document.getElementById('heroBadge').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span> ${SITE_DATA.profile.badge}`;
+    document.getElementById('heroTitle').innerHTML = SITE_DATA.profile.heroHeading;
+    document.getElementById('heroDesc').textContent = SITE_DATA.profile.heroSubtext;
+    document.getElementById('heroEmail').href = `mailto:${SITE_DATA.profile.email}`;
+    document.getElementById('navLinkedin').href = SITE_DATA.profile.linkedin;
+    document.getElementById('footerLinkedin').href = SITE_DATA.profile.linkedin;
+    document.getElementById('footerEmail').href = `mailto:${SITE_DATA.profile.email}`;
+    document.getElementById('footerEmailText').textContent = SITE_DATA.profile.email;
+
+    // Araçlar
+    const toolsGrid = document.getElementById('toolsGrid');
+    SITE_DATA.tools.forEach(t => {
+      toolsGrid.innerHTML += `
+        <div class="p-6 rounded-2xl bg-[#102A31] border border-[#143840] hover:border-[#E29E3A]/50 transition">
+          <i class="${t.icon} text-3xl text-[#E29E3A] mb-3"></i>
+          <h4 class="text-white font-semibold text-sm">${t.name}</h4>
+          <p class="text-[11px] text-slate-400 mt-1">${t.desc}</p>
+        </div>`;
+    });
+
+    // Projeler
+    const pGrid = document.getElementById('projectsGrid');
+    SITE_DATA.projects.forEach(p => {
+      pGrid.innerHTML += `
+        <div class="rounded-2xl bg-[#102A31] border border-[#143840] overflow-hidden flex flex-col hover:border-[#E29E3A]/50 transition">
+          <img src="${p.image}" class="h-52 w-full object-cover" />
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-[#E29E3A] font-bold uppercase tracking-wider">${p.category}</span>
+              <h3 class="text-lg font-bold text-white mt-1">${p.title}</h3>
+              <p class="text-xs text-slate-300 mt-2 font-light">${p.summary}</p>
+            </div>
+            <button onclick="openModal(${p.id})" class="mt-6 w-full py-2.5 rounded-lg bg-[#143840] hover:bg-[#E29E3A] text-white hover:text-[#0A1B20] text-xs font-bold transition">Vaka Analizini Gör</button>
+          </div>
+        </div>`;
+    });
+
+    // Modal
+    function openModal(id) {
+      const p = SITE_DATA.projects.find(item => item.id === id);
+      if(!p) return;
+      document.getElementById('mImg').src = p.image;
+      document.getElementById('mCat').textContent = p.category;
+      document.getElementById('mTitle').textContent = p.title;
+      document.getElementById('mDesc').textContent = p.summary;
+      document.getElementById('mProb').textContent = p.problem;
+      document.getElementById('mSol').textContent = p.solution;
+      document.getElementById('mTools').textContent = p.tools;
+      const m = document.getElementById('projectModal');
+      m.style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+    window.onclick = function(e) {
+      if(e.target === document.getElementById('projectModal')) closeModal();
+    }
+
+    // Canvas Animasyonu
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let pts = [];
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      pts = [];
+      for(let i=0; i<45; i++) pts.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*0.6, vy: (Math.random()-0.5)*0.6 });
+    }
+    function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      pts.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0 || p.x>canvas.width) p.vx*=-1;
+        if(p.y<0 || p.y>canvas.height) p.vy*=-1;
+        ctx.fillStyle = '#E29E3A';
+        ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI*2); ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    window.onresize = resize;
+    resize();
+    draw();
+  </script>
+</body>
+</html>
