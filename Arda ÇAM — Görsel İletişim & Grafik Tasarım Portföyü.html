@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arda ÇAM — Görsel İletişim & Grafik Tasarım Portföyü</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{teal0:'#03191e',teal1:'#004958',teal2:'#0b687c',amb:'#f0ab3c',amb2:'#ffc973'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],display:['Syne','sans-serif']}}}}
+</script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#051114}
+body{background:#051114;color:#f1f5f9;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+.glow{position:fixed;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(0,73,88,.8),rgba(240,171,60,.2) 45%,transparent 70%);filter:blur(95px);opacity:.5;pointer-events:none;z-index:0;transform:translate(-50%,-50%);left:-400px;top:-400px}
+.glass{background:rgba(3,25,30,.45);backdrop-filter:blur(14px);border:1px solid rgba(240,171,60,.18);transition:all .35s cubic-bezier(.16,1,.3,1)}
+.glass:hover{border-color:rgba(240,171,60,.65);transform:translateY(-6px);box-shadow:0 20px 40px -15px rgba(240,171,60,.25)}
+.nav{background:rgba(5,17,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(240,171,60,.22)}
+[contenteditable=true]{outline:2px dashed #f0ab3c;outline-offset:4px;background:rgba(240,171,60,.12);border-radius:4px;cursor:text}
+.stroke{-webkit-text-stroke:1.5px rgba(240,171,60,.55);color:transparent;transition:all .3s}
+.stroke:hover{-webkit-text-stroke-color:#f0ab3c;color:rgba(240,171,60,.15);text-shadow:0 0 30px rgba(240,171,60,.6)}
+.mq{display:inline-flex;animation:mq 28s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.ph{background:radial-gradient(circle at 30% 30%,#0b687c,#03191e);position:relative;overflow:hidden}
+.ph::before{content:"";position:absolute;width:55%;aspect-ratio:1;left:22%;top:14%;border-radius:50%;border:34px solid #f0ab3c;border-right-color:transparent;animation:sp 16s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.mq,.ph::before{animation:none}}
+.hide{display:none}
+.grain{position:fixed;inset:-50%;z-index:45;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .6s steps(6) infinite}
+@keyframes gr{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.ring2{transform-origin:205px 225px;animation:sp 45s linear infinite}
+.pg{position:absolute;inset:0}
+.pg-grid::before{content:"";position:absolute;left:-50%;right:-50%;bottom:-10%;height:75%;background:linear-gradient(rgba(240,171,60,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(240,171,60,.22) 1px,transparent 1px);background-size:60px 60px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 100%;animation:gm 3s linear infinite;-webkit-mask-image:linear-gradient(transparent,#000 60%);mask-image:linear-gradient(transparent,#000 60%)}
+@keyframes gm{to{background-position:0 60px}}
+.pg-film{background:repeating-linear-gradient(90deg,rgba(240,171,60,.07) 0 1px,transparent 1px 90px)}
+.pg-film::before,.pg-film::after{content:"";position:absolute;left:0;right:0;height:22px;background:repeating-linear-gradient(90deg,rgba(240,171,60,.22) 0 16px,transparent 16px 38px);animation:fm 6s linear infinite}
+.pg-film::before{top:14px}.pg-film::after{bottom:14px}
+@keyframes fm{to{background-position:-380px 0}}
+.pg-wood{background:repeating-linear-gradient(98deg,rgba(240,171,60,.07) 0 2px,transparent 2px 13px),repeating-linear-gradient(82deg,rgba(11,104,124,.25) 0 3px,transparent 3px 41px),radial-gradient(ellipse at 20% 30%,rgba(240,171,60,.12),transparent 60%)}
+.pg-rings{background:repeating-radial-gradient(circle at 85% 15%,transparent 0 46px,rgba(240,171,60,.12) 46px 48px)}
+.pg-route{background:radial-gradient(circle,rgba(240,171,60,.28) 1.5px,transparent 2px) 0 0/30px 30px,repeating-linear-gradient(118deg,transparent 0 120px,rgba(11,104,124,.55) 120px 123px)}
+.pg .tt{position:absolute;inset:-25%;transform:rotate(-12deg);font:800 8vw/1.05 Syne,sans-serif;color:transparent;-webkit-text-stroke:1px rgba(240,171,60,.16);word-break:break-word;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.ring2,.grain,.pg-grid::before,.pg-film::before,.pg-film::after{animation:none}}
+.cover{position:fixed;inset:0;z-index:80;background:#f0ab3c;pointer-events:none;transform:translateY(101%);border-radius:50% 50% 0 0/22% 22% 0 0}
+.cover.in{transition:transform .65s cubic-bezier(.7,0,.2,1),border-radius .65s;transform:none;border-radius:0}
+.cover.out{transition:transform .65s cubic-bezier(.7,0,.2,1),border-radius .65s;transform:translateY(-101%);border-radius:0 0 50% 50%/0 0 22% 22%}
+@media (prefers-reduced-motion:reduce){.cover.in,.cover.out{transition:none}}
+.blks{display:flex;flex-wrap:wrap;align-items:flex-start;margin:calc(var(--g,16px)/-2)}
+.blk{width:100%;padding:calc(var(--g,16px)/2);box-sizing:border-box}
+@media (min-width:640px){.blk{width:var(--w,100%)}}
+.blk.al-c{margin-left:auto;margin-right:auto}.blk.al-r{margin-left:auto}
+.blks.mz{display:block;columns:2;column-gap:0}
+.blks.mz .blk{width:100%;display:block;break-inside:avoid}
+@media (max-width:639px){.blks.mz{columns:1}}
+.dz{outline:3px dashed #f0ab3c;outline-offset:-3px}
+</style>
+</head>
+<body class="relative min-h-screen selection:bg-amb selection:text-teal0">
+<div id="glow" class="glow"></div>
+<div id="bg" class="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+ <canvas id="dots" class="absolute inset-0 w-full h-full"></canvas>
+</div>
+<div id="pbg" class="hide fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="sticky top-0 z-40 nav px-4 sm:px-8 py-3">
+ <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+  <a href="#" class="flex items-center gap-3">
+   <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M12 92V50a38 38 0 0 1 76 0v42" stroke="#0b687c" stroke-width="12"/><path d="M52 34a24 24 0 1 1-24 26" stroke="#f0ab3c" stroke-width="10"/><circle cx="26" cy="80" r="4.5" fill="#f0ab3c"/></svg>
+   <div><div class="font-display font-extrabold text-base sm:text-xl tracking-wider"><span id="siteName" data-e>ARDA ÇAM</span></div>
+   <div id="siteRole" data-e class="text-[10px] sm:text-xs tracking-widest uppercase text-amb font-semibold">Görsel İletişim & Grafik Tasarımcı</div></div>
+  </a>
+  <div class="flex items-center gap-2">
+   <a id="liN" href="https://linkedin.com" target="_blank" rel="noopener" class="hidden md:inline-block px-3 py-1.5 rounded-full text-xs font-bold border border-slate-700 hover:border-amb hover:text-amb">LinkedIn</a>
+   <a id="beN" href="https://behance.net" target="_blank" rel="noopener" class="hidden md:inline-block px-3 py-1.5 rounded-full text-xs font-bold border border-slate-700 hover:border-amb hover:text-amb">Behance</a>
+   <button id="editBtn" class="px-4 py-1.5 rounded-full text-xs font-extrabold border border-amb/60 text-amb hover:bg-amb hover:text-teal0 transition">Canlı Düzenle</button>
+  </div>
+ </div>
+</header>
+
+<div id="soc" class="hide bg-teal0/95 border-b border-amb px-4 py-3 relative z-30">
+ <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-2 text-xs">
+  <b class="text-amb">Bağlantılar:</b>
+  <input id="inLi" type="url" placeholder="LinkedIn linki" class="px-3 py-1.5 bg-black/60 border border-slate-700 rounded-lg flex-1 min-w-40">
+  <input id="inBe" type="url" placeholder="Behance linki" class="px-3 py-1.5 bg-black/60 border border-slate-700 rounded-lg flex-1 min-w-40">
+  <input id="inEm" type="email" placeholder="E-posta" class="px-3 py-1.5 bg-black/60 border border-slate-700 rounded-lg flex-1 min-w-40">
+  <button id="saveSoc" class="px-4 py-1.5 bg-amb text-teal0 font-extrabold rounded-lg">Kaydet</button>
+ </div>
+</div>
+
+
+<div id="home">
+<section class="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-28">
+ <span id="badge" data-e class="inline-block mb-6 px-3.5 py-1 rounded-full text-xs font-bold bg-teal0 border border-teal2 text-amb">✦ KİNETİK DİNAMİZM & MARKA KİMLİĞİ</span>
+ <h2 class="text-4xl sm:text-6xl md:text-8xl font-display font-extrabold leading-[.95] uppercase">
+  <span id="l1" data-e class="block">GÖRSEL DÜNYAYI</span>
+  <span id="l2" data-e class="block stroke">HAREKETLE</span>
+  <span id="l3" data-e class="block text-amb">ŞEKİLLENDİR.</span>
+ </h2>
+ <p id="hd" data-e class="mt-8 max-w-3xl text-base sm:text-xl text-slate-300 font-light leading-relaxed">Merhaba, ben Arda ÇAM. Video kurgu, motion design, kurumsal kimlik ve kampanya tasarımı alanlarında markalar için akılda kalıcı görsel hikayeler üretiyorum.</p>
+ <a href="#projects" class="inline-block mt-8 px-7 py-3.5 rounded-2xl bg-amb hover:bg-amb2 text-teal0 font-extrabold text-sm uppercase tracking-wider transition hover:scale-105"><span id="cta" data-e>6 Projeyi Keşfet</span> ↓</a>
+</section>
+
+<div id="mqEd" class="hide relative z-10 max-w-7xl mx-auto px-6 pb-4"><div class="flex flex-wrap items-center gap-2 text-xs p-3 border-2 border-dashed border-amb rounded-2xl"><label for="mqIn" class="text-amb font-bold">Kayan yazılar (virgülle ayır):</label><input id="mqIn" type="text" class="flex-1 min-w-48 px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><button id="mqSave" class="px-4 py-2 bg-amb text-teal0 font-extrabold rounded-full">Kaydet</button><button id="mqAuto" class="px-4 py-2 rounded-full border border-amb text-amb font-bold">Proje adlarından al</button></div></div>
+<div class="bg-teal1 border-y border-amb/40 overflow-hidden py-3.5 relative z-10" aria-hidden="true">
+ <div id="mq" class="mq whitespace-nowrap font-display font-extrabold text-sm sm:text-base uppercase tracking-widest text-white"></div>
+</div>
+
+<section id="projects" class="relative z-10 max-w-7xl mx-auto px-6 py-16">
+ <div class="mb-10 pb-6 border-b border-teal1/60">
+  <div id="sTag" data-e class="text-amb font-mono text-xs tracking-widest uppercase mb-2">Portföy</div>
+  <h3 id="sTitle" data-e class="text-3xl sm:text-5xl font-display font-extrabold uppercase">Öne Çıkan Projeler</h3>
+ </div>
+ <button id="addP" class="hide w-full mb-8 py-5 border-2 border-dashed border-amb/60 hover:border-amb bg-amb/5 rounded-2xl text-amb font-extrabold text-sm">+ Yeni proje kartı ekle</button>
+ <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</section>
+
+</div>
+<section id="page" class="hide relative z-10 max-w-5xl mx-auto px-6 pt-12 pb-24"></section>
+
+<div id="lb" class="hide fixed inset-0 z-[70] bg-black/90 items-center justify-center p-4 cursor-zoom-out"><img id="lbI" alt="" class="max-h-full max-w-full rounded-xl"></div>
+<div id="adapt" class="hide fixed inset-0 z-[75] bg-black/80 backdrop-blur-sm items-center justify-center p-4"><div class="bg-[#031e24] border border-teal2 rounded-3xl max-w-md w-full p-6" role="dialog" aria-labelledby="adT"><h4 id="adT" class="font-display font-extrabold text-xl mb-2">Görsel siteye uyumlu hale getirilsin mi?</h4><p id="adInfo" class="text-sm text-slate-300 mb-5"></p><div class="grid gap-2 text-sm font-bold"><button id="adCut" class="px-4 py-3 rounded-xl bg-amb text-teal0 text-left">Zemini kaldır (şeffaf yap)<span class="block text-xs font-normal">Düz renkli zemini siler, görsel sayfada süzülür.</span></button><button id="adCard" class="px-4 py-3 rounded-xl border border-amb text-amb text-left">Çerçeveli kartın içine al<span class="block text-xs font-normal">Beyaz zemin karta karışır, görsel orijinal kalır.</span></button><button id="adNo" class="px-4 py-3 rounded-xl border border-slate-600 text-left">Olduğu gibi bırak</button></div></div></div>
+<div id="cover" class="cover" aria-hidden="true"></div>
+<div id="toast" class="fixed bottom-6 right-6 z-[60] bg-amb text-teal0 px-5 py-3 rounded-2xl text-xs font-bold shadow-2xl opacity-0 pointer-events-none transition-opacity"></div>
+
+<footer class="relative z-10 border-t border-teal1/40 py-12 px-6 bg-[#041215]">
+ <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+  <div><h5 id="fT" data-e class="font-display font-extrabold text-xl uppercase">Birlikte bir fikir başlatalım</h5>
+  <p id="fD" data-e class="text-xs text-slate-400 mt-1 max-w-md">Kurumsal kimlik, motion ve kampanya projeleri için ulaşabilirsiniz.</p></div>
+  <div class="flex flex-wrap gap-3 text-xs font-bold">
+   <a id="liF" href="https://linkedin.com" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl glass hover:text-amb">LinkedIn</a>
+   <a id="beF" href="https://behance.net" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl glass hover:text-amb">Behance</a>
+   <a id="emF" href="mailto:contact@ardacam.work" class="px-4 py-2 rounded-xl bg-teal1 hover:bg-amb hover:text-teal0">E-Posta Gönder</a>
+  </div>
+ </div>
+ <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-white/5 flex justify-between text-xs text-slate-500">
+  <span>© 2026 Arda ÇAM</span><button id="reset" class="hide underline hover:text-white">Varsayılanları yükle</button>
+ </div>
+</footer>
+
+<script>
+const D=[
+{id:'p1',title:'Shoes Simulator',category:'Oyun UI & Görsel Tasarım',summary:'Simülasyon oyununun arayüz ve görsel tasarımı.',details:'Mezuniyet projesi olarak hazırlanan simülasyon oyununun UI ve görsel tasarım çalışması.',image:''},
+{id:'p2',title:'Sosyal Medya Kampanyası',category:'Kampanya',summary:'Sosyal medya için kampanya içerikleri.',details:'Açıklamayı Canlı Düzenle ile kendi metninle değiştir.',image:''},
+{id:'p3',title:'Video & Motion',category:'Kurgu · Motion · Reklam',summary:'Premiere Pro ve After Effects ile video ve motion işleri.',details:'Video kurgu, motion design ve reklam çalışmaları.',image:''},
+{id:'p4',title:'Boyraz Reisen',category:'Marka',summary:'Boyraz Reisen çalışması.',details:'Açıklamayı Canlı Düzenle ile kendi metninle değiştir.',image:''},
+{id:'p5',title:'Kurumsal Kimlik - Ahşap Büfe',category:'Kurumsal Kimlik',summary:'Ahşap Büfe için kurumsal kimlik çalışması.',details:'Açıklamayı Canlı Düzenle ile kendi metninle değiştir.',image:''},
+{id:'p6',title:'Sosyal Sorumluluk Projesi',category:'Farkındalık Kampanyası',summary:'SMA\'sız Yarınlar farkındalık kampanyası.',details:'Sosyal sorumluluk kapsamında hazırlanan farkındalık çalışması.',image:''}];
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const K={p:'ac2_projects',t:'ac2_texts',s:'ac2_soc'};
+const get=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))||f}catch(e){return f}};
+const put=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){toast('Kayıt başarısız: görseller çok büyük olabilir')}};
+let P=get(K.p,JSON.parse(JSON.stringify(D))),edit=false,cur=null;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){const e=$('#toast');e.textContent=t;e.style.opacity=1;clearTimeout(toast.x);toast.x=setTimeout(()=>e.style.opacity=0,2400)}
+
+const mqItems=()=>get('ac2_mq',null)||['ARDA ÇAM',...P.map(p=>p.title)];
+function marquee(){const w=mqItems().map((t,i)=>`<span class="mx-6"><span class="text-amb">${i%2?'●':'★'}</span> ${esc(t.toUpperCase())}</span>`).join('');$('#mq').innerHTML=w+w}
+function grid(){
+ $('#grid').innerHTML=P.map(p=>`<article class="glass rounded-3xl overflow-hidden flex flex-col justify-between">
+  <div class="h-56 w-full cursor-pointer ${th(p)?'':'ph'}" data-o="${p.id}" style="${th(p)?`background:url('${th(p)}') center/cover`:''}"></div>
+  <div class="p-6"><span class="text-xs font-mono text-amb/80">${esc(p.category)}</span>
+  <h4 class="text-xl font-display font-extrabold mt-1 cursor-pointer hover:text-amb" data-o="${p.id}">${esc(p.title)}</h4>
+  <p class="text-xs text-slate-300 mt-2 leading-relaxed">${esc(p.summary)}</p></div>
+  <div class="px-6 pb-6 pt-3 flex justify-between border-t border-white/5">
+   <button class="text-xs font-extrabold text-amb" data-o="${p.id}">Vakayı İncele →</button>
+   ${edit?`<div class="flex gap-1"><button class="px-2.5 py-1 text-amb text-[11px] font-bold rounded-lg border border-amb/50" data-mp="${p.id}:-1" aria-label="Öne al">←</button><button class="px-2.5 py-1 text-amb text-[11px] font-bold rounded-lg border border-amb/50" data-mp="${p.id}:1" aria-label="Sona al">→</button><button class="px-3 py-1 bg-red-950/80 text-red-200 text-[11px] font-bold rounded-lg border border-red-500/40" data-d="${p.id}">Sil</button></div>`:''}
+  </div></article>`).join('');
+ marquee();
+}
+const th=p=>p.image||((p.blocks||[]).find(b=>b.t==='img')||{}).v||'';
+const DB=()=>new Promise((res,rej)=>{const r=indexedDB.open('ac2db',1);r.onupgradeneeded=()=>r.result.createObjectStore('v');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+async function vPut(id,blob){const db=await DB();return new Promise((res,rej)=>{const t=db.transaction('v','readwrite');t.objectStore('v').put(blob,id);t.oncomplete=res;t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error)})}
+async function vGet(id){const db=await DB();return new Promise((res,rej)=>{const q=db.transaction('v').objectStore('v').get(id);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}
+function vDel(b){if(b&&b.t==='vf')DB().then(db=>db.transaction('v','readwrite').objectStore('v').delete(b.id)).catch(()=>{})}
+function loadVids(){document.querySelectorAll('[data-vf]').forEach(async v=>{try{const bl=await vGet(v.dataset.vf);if(bl)v.src=URL.createObjectURL(bl);else v.outerHTML='<p class="text-slate-400 text-sm">Video bulunamadı. Başka bir tarayıcıda yüklenmiş olabilir.</p>'}catch(e){}})}
+function bgFor(p){const M={p1:'grid',p2:'type',p3:'film',p4:'route',p5:'wood',p6:'rings'};return p.bg||M[p.id]||'rings'}
+function applyBg(p){
+ const el=$('#pbg');
+ if(p.bgImg){el.innerHTML=`<div class="pg" style="background:linear-gradient(rgba(5,17,20,.78),rgba(0,73,88,.72)),url('${p.bgImg}') center/cover"></div>`;return}
+ const k=bgFor(p);
+ el.innerHTML=k==='none'?'':`<div class="pg pg-${k}">${k==='type'?'<div class="tt">'+'MOTION KAMPANYA TASARIM '.repeat(60)+'</div>':''}</div>`;
+}
+let busy=false;
+function go(h){
+ if(busy)return;
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){location.hash=h;return}
+ busy=true;const cv=$('#cover');cv.className='cover in';
+ setTimeout(()=>{location.hash=h;scrollTo(0,0);cv.className='cover out';setTimeout(()=>{cv.className='cover';busy=false},680)},680);
+}
+let pend=null;
+function openAdapt(p,bl){pend={p,bl};$('#adInfo').textContent=bl.length+' görsel eklendi. İstersen sitenin renklerine uydurabilirim, istemezsen olduğu gibi kalır.';$('#adapt').classList.remove('hide');$('#adapt').classList.add('flex')}
+function closeAdapt(){$('#adapt').classList.add('hide');$('#adapt').classList.remove('flex')}
+function cutBg(src){return new Promise(res=>{const im=new Image();im.onload=()=>{
+ const w=im.width,h=im.height,c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(im,0,0);
+ const id=x.getImageData(0,0,w,h),d=id.data;
+ const corner=(cx,cy)=>{let r=0,g=0,b=0;for(let a=0;a<6;a++)for(let e=0;e<6;e++){const i=((cy+a)*w+cx+e)*4;r+=d[i];g+=d[i+1];b+=d[i+2]}return[r/36,g/36,b/36]};
+ const cs=[corner(0,0),corner(w-6,0),corner(0,h-6),corner(w-6,h-6)],bg=cs[0];
+ const df=(p,q)=>Math.max(Math.abs(p[0]-q[0]),Math.abs(p[1]-q[1]),Math.abs(p[2]-q[2]));
+ if(cs.some(k=>df(k,bg)>30)){res(null);return}
+ const T=40,vis=new Uint8Array(w*h),st=[];
+ const dist=i=>Math.max(Math.abs(d[i*4]-bg[0]),Math.abs(d[i*4+1]-bg[1]),Math.abs(d[i*4+2]-bg[2]));
+ const push=i=>{if(!vis[i]&&dist(i)<=T){vis[i]=1;st.push(i)}};
+ for(let i=0;i<w;i++){push(i);push((h-1)*w+i)}for(let j=0;j<h;j++){push(j*w);push(j*w+w-1)}
+ while(st.length){const i=st.pop(),cx=i%w,cy=(i/w)|0;if(cx>0)push(i-1);if(cx<w-1)push(i+1);if(cy>0)push(i-w);if(cy<h-1)push(i+w)}
+ let x0=w,y0=h,x1=0,y1=0;
+ for(let j=0;j<h;j++)for(let i=0;i<w;i++){const k=j*w+i;
+  if(vis[k]){d[k*4+3]=0;continue}
+  const nb=(i>0&&vis[k-1])||(i<w-1&&vis[k+1])||(j>0&&vis[k-w])||(j<h-1&&vis[k+w]);
+  if(nb)d[k*4+3]=Math.min(255,Math.round(255*dist(k)/(T*2.2)));
+  if(i<x0)x0=i;if(i>x1)x1=i;if(j<y0)y0=j;if(j>y1)y1=j}
+ if(x1<=x0||y1<=y0){res(null);return}
+ x.putImageData(id,0,0);
+ const o=document.createElement('canvas');o.width=x1-x0+1;o.height=y1-y0+1;o.getContext('2d').drawImage(c,x0,y0,o.width,o.height,0,0,o.width,o.height);
+ res(o.toDataURL('image/png'))};im.onerror=()=>res(null);im.src=src})}
+async function adApply(mode){
+ if(!pend)return;const {p,bl}=pend;closeAdapt();let ok=0,no=0;
+ if(mode==='cut'){toast('Zemin kaldırılıyor…');for(const b of bl){const r=await cutBg(b.v);if(r){b.v=r;b.cut=true;delete b.st;ok++}else no++}}
+ else if(mode==='card'){bl.forEach(b=>{b.st='card';delete b.cut});ok=bl.length}
+ else bl.forEach(b=>delete b.st);
+ put(K.p,P);page(p);pend=null;
+ if(mode==='cut')toast(ok+' görselin zemini kaldırıldı'+(no?'. '+no+' görselde zemin düz renk değil, kart seçeneğini dene':''));
+ else if(mode==='card')toast('Kart uygulandı');
+}
+function route(){
+ const m=location.hash.match(/^#\/p\/(.+)$/),p=m&&P.find(x=>x.id===m[1]);
+ cur=p?p.id:null;
+ $('#home').classList.toggle('hide',!!p);$('#bg').classList.toggle('hide',!!p);$('#pbg').classList.toggle('hide',!p);$('#page').classList.toggle('hide',!p);
+ if(p){page(p);scrollTo(0,0)}
+}
+function page(p){
+ const i=P.indexOf(p),n=P[(i+1)%P.length],v=P[(i-1+P.length)%P.length],ce=edit?'contenteditable="true"':'';
+ const bt='px-4 py-2 rounded-full border border-amb text-amb font-bold hover:bg-amb hover:text-teal0';
+ const inf=p.info||{},w='relative sm:col-span-2';let sn=0;
+ const info=[['year','Yıl'],['role','Rol'],['tools','Programlar']].filter(([k])=>edit||inf[k]).map(([k,l])=>`<div><dt class="text-xs text-slate-400">${l}</dt><dd class="font-bold" ${ce} data-i="${k}">${esc(inf[k]||'—')}</dd></div>`).join('');
+ const bb='px-2.5 py-1 bg-teal0/90 text-amb text-[11px] font-bold rounded-lg border border-amb/50';
+ const d=k=>{if(!edit)return'';const b=p.blocks[k],al=b.al||'',ab=(v,l)=>`<button class="${bb} ${al===v?'ring-2 ring-amb':''}" data-al="${k}:${v}">${l}</button>`;return `<div class="flex flex-wrap gap-1 mt-2 text-left"><button class="${bb} cursor-grab" draggable="true" data-dg="${k}" aria-label="Sürükle">⠿ Sürükle</button><button class="${bb}" data-mv="${k}:-1" aria-label="Öne al">←</button><button class="${bb}" data-mv="${k}:1" aria-label="Sona al">→</button>${ab('l','Sol')}${ab('c','Orta')}${ab('r','Sağ')}<button class="${bb}" data-sz="${k}">Boyut ${b.sz?b.sz+'%':'oto'}</button>${b.t==='img'?`<button class="${bb}" data-ad="${k}">Uyumla</button>`:''}<button class="px-3 py-1 bg-red-950/90 text-red-200 text-[11px] font-bold rounded-lg border border-red-500/40" data-db="${k}">Sil</button></div>`};
+ const imgTag=b=>b.st==='card'?`<div class="rounded-2xl p-4 sm:p-6 border border-amb/25 shadow-xl" style="background:linear-gradient(135deg,#f4f8f8,#dbe7e9)"><img src="${b.v}" alt="" data-lb class="w-full block cursor-zoom-in" style="mix-blend-mode:multiply"></div>`:b.cut?`<img src="${b.v}" alt="" data-lb class="w-full block cursor-zoom-in" style="filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))">`:`<img src="${b.v}" alt="" data-lb class="w-full rounded-2xl border border-teal2/40 cursor-zoom-in">`;
+ const T={l:'text-left',c:'text-center',r:'text-right'},lay=(b)=>({c:'blk relative '+T[b.al||'l']+(b.al==='c'?' al-c':b.al==='r'?' al-r':''),s:`--w:${b.sz||(b.t==='img'?50:100)}%`});
+ const bl=(p.blocks||[]).map((b,k)=>{const L=lay(b,b.t==='img'?'relative':w);
+  if(b.t==='img')return `<figure class="${L.c}" style="${L.s}">${imgTag(b)}${d(k)}</figure>`;
+  if(b.t==='ba')return `<div class="${L.c}" style="${L.s}"><div class="relative overflow-hidden rounded-2xl select-none"><img src="${b.b}" alt="Sonra" class="w-full block"><img src="${b.a}" alt="Önce" class="bf absolute inset-0 w-full h-full object-cover" style="clip-path:inset(0 50% 0 0)"><span class="absolute top-3 left-3 bg-teal0/85 px-2 py-0.5 rounded text-xs font-bold">Önce</span><span class="absolute top-3 right-3 bg-teal0/85 px-2 py-0.5 rounded text-xs font-bold">Sonra</span><input type="range" min="0" max="100" value="50" aria-label="Önce / sonra" oninput="this.parentNode.querySelector('.bf').style.clipPath='inset(0 '+(100-this.value)+'% 0 0)'" class="absolute inset-x-0 bottom-3 mx-auto w-2/3 accent-amber-400"></div>${d(k)}</div>`;
+  if(b.t==='vid')return `<div class="${L.c}" style="${L.s}">${/\.(mp4|webm)(\?|$)/i.test(b.v)?`<video controls src="${esc(b.v)}" class="w-full rounded-2xl"></video>`:`<a href="${esc(b.v)}" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded-full border-2 border-amb text-amb font-bold hover:bg-amb hover:text-teal0">Videoyu izle ↗</a>`}${d(k)}</div>`;
+  if(b.t==='vf')return `<div class="${L.c}" style="${L.s}"><video controls preload="metadata" data-vf="${b.id}" class="w-full rounded-2xl bg-teal0 aspect-video"></video>${d(k)}</div>`;
+  if(b.t==='pal')return `<div class="${L.c}" style="${L.s}"><div class="flex flex-wrap gap-3">${b.v.map(c=>`<div class="w-28"><div class="h-20 rounded-xl border border-white/10" style="background:${esc(c)}"></div><div class="text-xs font-mono mt-1">${esc(c)}</div></div>`).join('')}</div>${b.f?`<p class="mt-4 text-lg font-bold">Font: ${esc(b.f)}</p>`:''}${d(k)}</div>`;
+  if(b.t==='step'){sn++;return `<div class="${L.c} flex gap-5" style="${L.s}"><span class="font-display font-extrabold text-amb text-4xl leading-none">${sn}</span><div><h4 class="font-display font-extrabold text-xl" ${ce} data-b="${k}" data-bf="v">${esc(b.v)}</h4><p class="text-slate-300 mt-1 max-w-2xl" ${ce} data-b="${k}" data-bf="x">${esc(b.x)}</p>${d(k)}</div></div>`}
+  return `<div class="${L.c}" style="${L.s}"><p class="text-lg text-slate-200 max-w-3xl ${{l:'',c:'mx-auto',r:'ml-auto'}[b.al||'l']}" ${ce} data-b="${k}">${esc(b.v)}</p>${d(k)}</div>`;
+ }).join('');
+ $('#page').innerHTML=`<a href="#" class="text-amb text-sm font-bold">← Tüm projeler</a>
+ <div class="mt-8"><span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-teal1 text-amb mb-4" ${ce} data-f="category">${esc(p.category)}</span>
+ <h2 class="text-4xl sm:text-6xl font-display font-extrabold uppercase leading-none mb-5" ${ce} data-f="title">${esc(p.title)}</h2>
+ <p class="text-lg text-white font-medium max-w-3xl" ${ce} data-f="summary">${esc(p.summary)}</p>
+ <p class="mt-3 text-slate-300 max-w-3xl whitespace-pre-line" ${ce} data-f="details">${esc(p.details)}</p>
+ ${info?`<dl class="mt-8 grid sm:grid-cols-3 gap-4 max-w-3xl border-y border-teal2/40 py-4">${info}</dl>`:''}</div>
+ ${edit?`<div class="mt-8 p-4 border-2 border-dashed border-amb rounded-2xl grid gap-3 text-xs">
+  <div class="flex flex-wrap gap-2"><button id="aImg" class="${bt}">+ Görsel yükle</button><button id="aBA" class="${bt}">+ Önce/Sonra (2 görsel)</button><button id="aTxt" class="${bt}">+ Metin</button><button id="aStep" class="${bt}">+ Süreç adımı</button></div>
+  <div class="flex flex-wrap gap-2"><input id="vUrl" type="text" placeholder="Video bağlantısı (mp4 / YouTube / Vimeo)" class="flex-1 min-w-40 px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><button id="aVid" class="${bt}">+ Video bağlantısı (en üste)</button><button id="aVf" class="${bt}">+ Video yükle (bilgisayardan)</button></div>
+  <div class="flex flex-wrap gap-2"><input id="pIn" type="text" placeholder="#004958, #f0ab3c | Font adı" class="flex-1 min-w-40 px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><button id="aPal" class="${bt}">+ Renk paleti</button></div>
+  <div class="flex flex-wrap gap-2 items-center"><label for="gapSel" class="text-slate-300">Boşluk:</label><select id="gapSel" class="px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><option value="0" ${(p.gap===undefined?16:p.gap)===0?'selected':''}>Boşluksuz</option><option value="8" ${(p.gap===undefined?16:p.gap)===8?'selected':''}>Sıkı</option><option value="16" ${(p.gap===undefined?16:p.gap)===16?'selected':''}>Normal</option><option value="32" ${(p.gap===undefined?16:p.gap)===32?'selected':''}>Geniş</option></select><label for="lySel" class="text-slate-300">Düzen:</label><select id="lySel" class="px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><option value="" ${!p.mz?'selected':''}>Satır (yan yana diz)</option><option value="mz" ${p.mz?'selected':''}>Mozaik (dikey boşluk da kapanır)</option></select></div>
+  <div class="flex flex-wrap gap-2 items-center"><label for="bgSel" class="text-slate-300">Arka plan:</label><select id="bgSel" class="px-3 py-2 bg-black/60 border border-slate-700 rounded-full"><option value="grid" ${bgFor(p)==='grid'?'selected':''}>Perspektif zemin</option><option value="film" ${bgFor(p)==='film'?'selected':''}>Film şeridi</option><option value="wood" ${bgFor(p)==='wood'?'selected':''}>Ahşap damarı</option><option value="rings" ${bgFor(p)==='rings'?'selected':''}>Halkalar</option><option value="route" ${bgFor(p)==='route'?'selected':''}>Rota noktaları</option><option value="type" ${bgFor(p)==='type'?'selected':''}>Dev tipografi</option><option value="none" ${bgFor(p)==='none'?'selected':''}>Yok</option></select><button id="aBg" class="${bt}">Arka plan görseli yükle</button>${p.bgImg?`<button id="xBg" class="${bt}">Görseli kaldır</button>`:''}</div>
+  <p class="text-slate-400">Önce/Sonra için dosya adlarını "1-önce", "2-sonra" gibi adlandır; alfabetik ilk dosya "önce" olur.</p></div>`:''}
+ <div class="mt-10 blks${p.mz?' mz':''}" style="--g:${p.gap===undefined?16:p.gap}px">${bl||`<div class="ph h-72 rounded-2xl grid place-items-center w-full"><span class="relative bg-teal0 px-4 py-1 rounded-full text-slate-300 text-sm">${edit?'Görsel, metin veya video ekle':'Yakında'}</span></div>`}</div>
+ <nav class="mt-16 flex justify-between gap-6 text-lg font-display font-extrabold"><a href="#/p/${v.id}" class="hover:text-amb"><small class="block text-xs text-slate-400 font-sans font-normal">Önceki</small>${esc(v.title)}</a><a href="#/p/${n.id}" class="text-right hover:text-amb"><small class="block text-xs text-slate-400 font-sans font-normal">Sonraki</small>${esc(n.title)}</a></nav>`;
+ applyBg(p);loadVids();document.querySelectorAll('#page .blk').forEach((el,i)=>el.dataset.k=i);
+}
+function shrink(file){return new Promise(r=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1200/im.width),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.8))};im.src=URL.createObjectURL(file)})}
+
+function setEdit(v){
+ edit=v;if(v)$('#mqIn').value=mqItems().join(', ');$('#editBtn').textContent=v?'Düzenlemeyi Bitir':'Canlı Düzenle';
+ $('#editBtn').classList.toggle('bg-amb',v);$('#editBtn').classList.toggle('text-teal0',v);
+ ['#soc','#addP','#reset','#mqEd'].forEach(s=>$(s).classList.toggle('hide',!v));
+ $$('[data-e]').forEach(e=>e.contentEditable=v);
+ if(!v){saveTexts();toast('Değişiklikler kaydedildi')}
+ grid();route();
+}
+function saveTexts(){const d={};$$('[data-e]').forEach(e=>d[e.id]=e.innerHTML);put(K.t,d)}
+function loadTexts(){const d=get(K.t,{});Object.keys(d).forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML=d[id]})}
+function socials(){
+ const s=get(K.s,{li:'https://linkedin.com',be:'https://behance.net',em:'contact@ardacam.work'});
+ ['liN','liF'].forEach(i=>$('#'+i).href=s.li);['beN','beF'].forEach(i=>$('#'+i).href=s.be);$('#emF').href='mailto:'+s.em;
+ $('#inLi').value=s.li;$('#inBe').value=s.be;$('#inEm').value=s.em;
+}
+
+document.addEventListener('click',e=>{
+ if(e.target.dataset&&e.target.dataset.lb!==undefined){$('#lbI').src=e.target.src;$('#lb').classList.remove('hide');$('#lb').classList.add('flex');return}
+ if(e.target.closest('#lb')){$('#lb').classList.add('hide');$('#lb').classList.remove('flex');return}
+ const a=e.target.closest('a[href^="#"]');if(a&&(a.getAttribute('href')==='#'||a.getAttribute('href').startsWith('#/'))){e.preventDefault();go(a.getAttribute('href'));return}
+ const t=e.target.closest('button,[data-o]');if(!t)return;
+ if(t.dataset.o){go('#/p/'+t.dataset.o);return}
+ if(t.dataset.db!==undefined){const p=P.find(x=>x.id===cur);vDel(p.blocks[+t.dataset.db]);p.blocks.splice(+t.dataset.db,1);put(K.p,P);page(p);return}
+ if(t.dataset.mv){const [k,dl]=t.dataset.mv.split(':').map(Number),p=P.find(x=>x.id===cur),j=k+dl;if(j>=0&&j<p.blocks.length){[p.blocks[k],p.blocks[j]]=[p.blocks[j],p.blocks[k]];put(K.p,P);page(p)}return}
+ if(t.dataset.mp){const [id,dl]=t.dataset.mp.split(':'),i=P.findIndex(x=>x.id===id),j=i+ +dl;if(j>=0&&j<P.length){[P[i],P[j]]=[P[j],P[i]];put(K.p,P);grid()}return}
+ if(t.dataset.ad){const p=P.find(x=>x.id===cur);openAdapt(p,[p.blocks[+t.dataset.ad]]);return}
+ if(t.dataset.al){const [k,v]=t.dataset.al.split(':'),p=P.find(x=>x.id===cur);p.blocks[+k].al=v;put(K.p,P);page(p);return}
+ if(t.dataset.sz){const p=P.find(x=>x.id===cur),b=p.blocks[+t.dataset.sz],z=[0,35,50,75,100],nx=z[(z.indexOf(b.sz||0)+1)%z.length];if(nx)b.sz=nx;else delete b.sz;put(K.p,P);page(p);return}
+ if(t.dataset.d){if(!t.dataset.arm){t.dataset.arm=1;t.textContent='Emin misin?';setTimeout(()=>{t.dataset.arm='';t.textContent='Sil'},2500);return}P=P.filter(p=>p.id!==t.dataset.d);put(K.p,P);grid();return}
+ if(t.id==='editBtn')setEdit(!edit);
+ else if(t.id==='saveSoc'){put(K.s,{li:$('#inLi').value.trim()||'https://linkedin.com',be:$('#inBe').value.trim()||'https://behance.net',em:$('#inEm').value.trim()||'contact@ardacam.work'});socials();toast('Bağlantılar güncellendi')}
+ else if(t.id==='addP'){const p={id:'p'+Date.now(),title:'Yeni Proje',category:'Kategori',summary:'Kısa özet yaz.',details:'Proje detaylarını yaz.',image:'',blocks:[]};P.unshift(p);put(K.p,P);go('#/p/'+p.id)}
+ else if(t.id==='aImg'){const p=P.find(x=>x.id===cur),f=document.createElement('input');f.type='file';f.accept='image/*';f.multiple=true;f.onchange=async()=>{p.blocks=p.blocks||[];const nb=[];for(const fl of f.files){const b={t:'img',v:await shrink(fl)};p.blocks.push(b);nb.push(b)}put(K.p,P);page(p);if(nb.length)openAdapt(p,nb)};f.click()}
+ else if(t.id==='aTxt'){const p=P.find(x=>x.id===cur);(p.blocks=p.blocks||[]).push({t:'txt',v:'Metnini buraya yaz.'});put(K.p,P);page(p)}
+ else if(t.id==='adCut')adApply('cut')
+ else if(t.id==='adCard')adApply('card')
+ else if(t.id==='adNo')adApply('no')
+ else if(t.id==='mqSave'){const it=$('#mqIn').value.split(',').map(x=>x.trim()).filter(Boolean);if(!it.length){toast('En az bir yazı gir');return}put('ac2_mq',it);marquee();toast('Kayan yazılar güncellendi')}
+ else if(t.id==='mqAuto'){localStorage.removeItem('ac2_mq');$('#mqIn').value=mqItems().join(', ');marquee();toast('Proje adlarından yenilendi')}
+ else if(t.id==='aBg'){const p=P.find(x=>x.id===cur),f=document.createElement('input');f.type='file';f.accept='image/*';f.onchange=async()=>{p.bgImg=await shrink(f.files[0]);put(K.p,P);page(p)};f.click()}
+ else if(t.id==='xBg'){const p=P.find(x=>x.id===cur);delete p.bgImg;put(K.p,P);page(p)}
+ else if(t.id==='aBA'){const p=P.find(x=>x.id===cur),f=document.createElement('input');f.type='file';f.accept='image/*';f.multiple=true;f.onchange=async()=>{if(f.files.length!==2){toast('Tam 2 görsel seç: 1. önce, 2. sonra');return}const [x,y]=[...f.files].sort((a,b)=>a.name.localeCompare(b.name));const a=await shrink(x),b=await shrink(y);(p.blocks=p.blocks||[]).push({t:'ba',a,b});put(K.p,P);page(p)};f.click()}
+ else if(t.id==='aStep'){const p=P.find(x=>x.id===cur);(p.blocks=p.blocks||[]).push({t:'step',v:'Adım başlığı',x:'Bu aşamada ne yaptığını yaz.'});put(K.p,P);page(p)}
+ else if(t.id==='aPal'){const [c,fn]=$('#pIn').value.split('|'),cols=c.split(/[ ,]+/).filter(x=>/^#[0-9a-f]{3,8}$/i.test(x));if(!cols.length){toast('En az bir renk kodu gir (#004958)');return}const p=P.find(x=>x.id===cur);(p.blocks=p.blocks||[]).push({t:'pal',v:cols,f:(fn||'').trim()});put(K.p,P);page(p)}
+ else if(t.id==='aVf'){const p=P.find(x=>x.id===cur),f=document.createElement('input');f.type='file';f.accept='video/*';f.onchange=async()=>{const fl=f.files[0];if(!fl)return;if(fl.size>400*1024*1024){toast('Video 400 MB\'dan büyük; sıkıştırıp tekrar dene');return}toast('Video yükleniyor…');const id='v'+Date.now();try{await vPut(id,fl);(p.blocks=p.blocks||[]).unshift({t:'vf',id,n:fl.name});put(K.p,P);page(p);toast('Video eklendi')}catch(e){toast('Video kaydedilemedi: depolama alanı dolu olabilir')}};f.click()}
+ else if(t.id==='aVid'){const u=$('#vUrl').value.trim();if(!/^https?:\/\//.test(u)){toast('Geçerli bir bağlantı gir (https://…)');return}const p=P.find(x=>x.id===cur);(p.blocks=p.blocks||[]).unshift({t:'vid',v:u});put(K.p,P);page(p)}
+ else if(t.id==='reset'){if(!t.dataset.arm){t.dataset.arm=1;t.textContent='Emin misin? Tüm değişiklikler silinir';setTimeout(()=>{t.dataset.arm='';t.textContent='Varsayılanları yükle'},3000);return}
+  Object.values(K).forEach(k=>localStorage.removeItem(k));location.reload()}
+});
+document.addEventListener('focusout',e=>{
+ const el=e.target;
+ if(el.dataset&&el.dataset.f&&cur){const p=P.find(x=>x.id===cur);p[el.dataset.f]=el.textContent.trim();put(K.p,P);grid()}
+ else if(el.dataset&&el.dataset.i&&cur){const p=P.find(x=>x.id===cur),tx=el.textContent.trim();(p.info=p.info||{})[el.dataset.i]=tx==='—'?'':tx;put(K.p,P)}
+ else if(el.dataset&&el.dataset.b!==undefined&&cur){const p=P.find(x=>x.id===cur);p.blocks[+el.dataset.b][el.dataset.bf||'v']=el.textContent;put(K.p,P)}
+ else if(el.dataset&&el.dataset.e!==undefined)saveTexts();
+});
+addEventListener('hashchange',route);
+addEventListener('scroll',()=>{if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.style.setProperty('--sy',scrollY)},{passive:true});
+document.addEventListener('change',e=>{if(e.target.id==='gapSel'||e.target.id==='lySel'){const p=P.find(x=>x.id===cur);if(e.target.id==='gapSel')p.gap=+e.target.value;else p.mz=!!e.target.value;put(K.p,P);page(p);return}
+if(e.target.id==='bgSel'){const p=P.find(x=>x.id===cur);p.bg=e.target.value;delete p.bgImg;put(K.p,P);page(p)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#lb').classList.add('hide');$('#lb').classList.remove('flex')}});
+addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+(function(){
+ const c=$('#dots'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ let W,H,D=[],mx=-999,my=-999;const G=34,R=170;
+ function init(){const r=devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*r;c.height=H*r;x.setTransform(r,0,0,r,0,0);D=[];for(let i=G/2;i<W+G;i+=G)for(let j=G/2;j<H+G;j+=G)D.push({hx:i,hy:j,x:i,y:j})}
+ function draw(){
+  x.clearRect(0,0,W,H);
+  for(const d of D){
+   const dx=d.hx-mx,dy=d.hy-my,dist=Math.hypot(dx,dy)||1;let tx=d.hx,ty=d.hy,k=0;
+   if(dist<R){k=1-dist/R;const f=k*k*48;tx+=dx/dist*f;ty+=dy/dist*f}
+   d.x+=(tx-d.x)*.14;d.y+=(ty-d.y)*.14;
+   x.fillStyle=`rgba(240,171,60,${.2+k*.65})`;x.beginPath();x.arc(d.x,d.y,1.5+k*2.6,0,6.283);x.fill();
+  }
+ }
+ addEventListener('resize',()=>{init();if(rm)draw()});
+ addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+ document.addEventListener('pointerleave',()=>{mx=my=-999});
+ init();
+ (function loop(){if(!$('#bg').classList.contains('hide'))draw();if(!rm)requestAnimationFrame(loop)})();
+})();
+document.addEventListener('dragstart',e=>{const g=e.target.closest&&e.target.closest('[data-dg]');if(!g)return;e.dataTransfer.setData('text/plain',g.dataset.dg);e.dataTransfer.effectAllowed='move';const b=g.closest('.blk');if(b)e.dataTransfer.setDragImage(b,20,20)});
+document.addEventListener('dragover',e=>{const b=e.target.closest&&e.target.closest('#page .blk');if(b){e.preventDefault();document.querySelectorAll('.dz').forEach(x=>x.classList.remove('dz'));b.classList.add('dz')}});
+document.addEventListener('drop',e=>{const b=e.target.closest&&e.target.closest('#page .blk');if(!b)return;e.preventDefault();const from=+e.dataTransfer.getData('text/plain'),to=+b.dataset.k,p=P.find(x=>x.id===cur);if(!p||isNaN(from)||isNaN(to)||from===to)return;const [m]=p.blocks.splice(from,1);p.blocks.splice(to,0,m);put(K.p,P);page(p)});
+document.addEventListener('dragend',()=>document.querySelectorAll('.dz').forEach(x=>x.classList.remove('dz')));
+loadTexts();socials();grid();route();
+</script>
+</body>
+</html>
